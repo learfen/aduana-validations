@@ -59,9 +59,9 @@ Se sirven algunos tipos por defecto, pero puede crear tantos como requiera
         // para las clases solo debemos colocar el nombre de las mismas en la funcion
         class Names {
             constructor() {
-                this.val = \['dueño=dani'\];
+                this.val = ['dueño=dani'];
             }
-            \_setValue(val=$String()){
+            _setValue(val=$String()){
                 this.val.push( val )
             }
         }
@@ -71,7 +71,7 @@ Se sirven algunos tipos por defecto, pero puede crear tantos como requiera
                 this.val = 0;
                 this.cel = null
             }
-            \_setValue(val=$Number() , cel=$Boolean()){
+            _setValue(val=$Number() , cel=$Boolean()){
                 this.val = val;
                 this.cel = cel
             }
