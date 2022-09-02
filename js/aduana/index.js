@@ -121,17 +121,20 @@ Object.prototype.assignInterface = function ( fn, parent ){
 }
 
 function classValidation( names ){
+    if( typeof names == 'function'){}
     let response = {}
     for(let classObject in names ){
-        window[classObject] = names[classObject]
+        try {
+            window[classObject] = names[classObject]
+        } catch (error) {
+            
+        }
         eval(`
-        getMethods( ${classObject} ).forEach( item => {
-            ${classObject}.prototype[item.replace('_','')] = ${classObject}.assignInterface( ${classObject}.prototype[item] )
-            response['${classObject}'] = ${classObject}
+        getMethods( names.${classObject} ).forEach( item => {
+            names.${classObject}.prototype[item.replace('_','')] = names.${classObject}.assignInterface( names.${classObject}.prototype[item] )
         })
         `)
     }
-    return response
 }
 
 
