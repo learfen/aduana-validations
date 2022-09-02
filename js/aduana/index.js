@@ -121,8 +121,6 @@ Object.prototype.assignInterface = function ( fn, parent ){
 }
 
 function classValidation( names ){
-    if( typeof names == 'function'){}
-    let response = {}
     for(let classObject in names ){
         try {
             window[classObject] = names[classObject]
